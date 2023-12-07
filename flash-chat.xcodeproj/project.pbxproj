@@ -52,6 +52,7 @@
 		2BBB7DA92B22342F00DC774C /* AlertFailedLoginorRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB7DA82B22342F00DC774C /* AlertFailedLoginorRegister.swift */; };
 		2BBB7DAB2B223D5C00DC774C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB7DAA2B223D5C00DC774C /* LoginViewModel.swift */; };
 		2BBB7DAD2B2240E100DC774C /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB7DAC2B2240E100DC774C /* ChatViewModel.swift */; };
+		2BBB7DB02B224C9000DC774C /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB7DAF2B224C9000DC774C /* K.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		2BBB7DA82B22342F00DC774C /* AlertFailedLoginorRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFailedLoginorRegister.swift; sourceTree = "<group>"; };
 		2BBB7DAA2B223D5C00DC774C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2BBB7DAC2B2240E100DC774C /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		2BBB7DAF2B224C9000DC774C /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		2BA11AE02B21FBBB001FC310 /* flash-chat */ = {
 			isa = PBXGroup;
 			children = (
+				2BBB7DAE2B224C8300DC774C /* Constants */,
 				2BBB7DA32B2233C000DC774C /* Alerts */,
 				2BA11B012B21FC21001FC310 /* Register */,
 				2BA11B002B21FC1D001FC310 /* Login */,
@@ -301,6 +304,14 @@
 			path = Alerts;
 			sourceTree = "<group>";
 		};
+		2BBB7DAE2B224C8300DC774C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				2BBB7DAF2B224C9000DC774C /* K.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -418,6 +429,7 @@
 				2BA11B1F2B21FCB0001FC310 /* HomeView.swift in Sources */,
 				2BA11B1B2B21FCA3001FC310 /* LoginViewController.swift in Sources */,
 				2BA11B0F2B21FC78001FC310 /* RegisterViewModel.swift in Sources */,
+				2BBB7DB02B224C9000DC774C /* K.swift in Sources */,
 				2BBB7DAD2B2240E100DC774C /* ChatViewModel.swift in Sources */,
 				2BBB7DA92B22342F00DC774C /* AlertFailedLoginorRegister.swift in Sources */,
 			);

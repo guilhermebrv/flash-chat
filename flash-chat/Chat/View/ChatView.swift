@@ -62,7 +62,7 @@ class ChatView: UIView {
     
     lazy var messageTextField: UITextField = {
         let textField = UITextField()
-        let attributedString = NSAttributedString(string: "  Write a message...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray.withAlphaComponent(0.5)])
+        let attributedString = NSAttributedString(string: "Write a message...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray.withAlphaComponent(0.5)])
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.attributedPlaceholder = attributedString
         textField.textColor = .black
@@ -70,6 +70,8 @@ class ChatView: UIView {
         textField.tintColor = .black
         textField.layer.cornerRadius = 8
         textField.font = .systemFont(ofSize: 18, weight: .regular)
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.leftViewMode = .always
         return textField
     }()
     

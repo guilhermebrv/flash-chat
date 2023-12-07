@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import FirebaseAuth
+import FirebaseAuth
 
 protocol RegisterViewModelProtocol: AnyObject {
     func registerSuccessful()
@@ -21,12 +21,12 @@ class RegisterViewModel {
     }
     
     public func createUser(email: String, password: String) {
-        /*Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if error == nil {
                 self.delegate?.registerSuccessful()
             } else if let error = error {
                 self.delegate?.registerFailed(error: error)
             }
-        }*/
+        }
     }
 }

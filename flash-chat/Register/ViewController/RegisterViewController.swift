@@ -35,7 +35,7 @@ extension RegisterViewController: RegisterViewModelProtocol {
     }
     
     func registerFailed(error: Error) {
-        print(error.localizedDescription)
+        AlertFailedLoginorRegister(controller: self).showAlert(title: "Warning", message: error.localizedDescription)
     }
 }
 

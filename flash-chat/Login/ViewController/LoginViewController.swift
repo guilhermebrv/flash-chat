@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginViewProtocol {
-    func tappedRegisterButton() {
+    func tappedLoginButton() {
         let register = RegisterViewController()
         navigationController?.pushViewController(register, animated: true)
     }

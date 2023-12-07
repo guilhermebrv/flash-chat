@@ -8,7 +8,7 @@
 import UIKit
 
 protocol LoginViewProtocol: AnyObject {
-    func tappedRegisterButton()
+    func tappedLoginButton()
 }
 
 class LoginView: UIView {
@@ -71,19 +71,19 @@ class LoginView: UIView {
         return textField
     }()
     
-    lazy var registerButton: UIButton = {
+    lazy var loginButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.configuration = .plain()
         button.configuration?.baseForegroundColor = .systemBlue
         button.configuration?.attributedTitle = AttributedString("Register", attributes: AttributeContainer([NSAttributedString.Key.font :UIFont.systemFont(ofSize: 20, weight: .regular)]))
         button.configuration?.baseForegroundColor = .systemBlue.withAlphaComponent(0.8)
-        button.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
         return button
     }()
     
-    @objc public func tappedRegisterButton() {
-        delegate?.tappedRegisterButton()
+    @objc public func tappedLoginButton() {
+        delegate?.tappedLoginButton()
     }
     
     override init(frame: CGRect) {
@@ -103,7 +103,7 @@ class LoginView: UIView {
         bgView.addSubview(emailTextField)
         bgView.addSubview(passwordImageView)
         bgView.addSubview(passwordTextField)
-        bgView.addSubview(registerButton)
+        bgView.addSubview(loginButton)
     }
     
     private func configConstraints() {
@@ -133,8 +133,8 @@ class LoginView: UIView {
             passwordTextField.trailingAnchor.constraint(equalTo: passwordImageView.trailingAnchor, constant: -35),
             passwordTextField.heightAnchor.constraint(equalToConstant: 70),
             
-            registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 5),
-            registerButton.centerXAnchor.constraint(equalTo: centerXAnchor)
+            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 5),
+            loginButton.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
 }

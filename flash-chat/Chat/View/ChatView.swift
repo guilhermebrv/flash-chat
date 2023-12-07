@@ -75,7 +75,7 @@ class ChatView: UIView {
             bgView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
             logoutButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            logoutButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 15),
+            logoutButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
             
             chatTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 45),
             chatTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),

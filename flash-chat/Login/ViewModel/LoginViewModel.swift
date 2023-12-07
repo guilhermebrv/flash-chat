@@ -22,8 +22,6 @@ class LoginViewModel {
     
     public func signInUser(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-            guard let strongSelf = self else { return }
-
             if error == nil {
                 self?.delegate?.loginSuccessful()
             } else if let error = error {

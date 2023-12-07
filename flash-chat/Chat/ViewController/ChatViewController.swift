@@ -10,6 +10,7 @@ import UIKit
 class ChatViewController: UIViewController {
 
     private var screen: ChatView?
+    private var viewModel: ChatViewModel = ChatViewModel()
     
     override func loadView() {
         screen = ChatView()
@@ -23,15 +24,22 @@ class ChatViewController: UIViewController {
     
     private func signProtocols() {
         screen?.delegate(delegate: self)
+        viewModel.delegate(delegate: self)
     }
+}
 
+extension ChatViewController: ChatViewModelProtocol {
+    func signOutSuccessful() {
+        let home = HomeViewController()
+        navigationController?.pushViewController(home, animated: true)
+    }
+    func signOutFailed(error: Error) {
+        print(error.localizedDescription)
+    }
 }
 
 extension ChatViewController: ChatViewProtocol {
     func tappedLogoutButton() {
-        let home = HomeViewController()
-        navigationController?.pushViewController(home, animated: true)
+        viewModel.signOutUser()
     }
-    
-    
 }

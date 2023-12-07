@@ -51,6 +51,7 @@
 		2BBB7DA22B22300E00DC774C /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 2BBB7DA12B22300E00DC774C /* FirebaseStorageCombine-Community */; };
 		2BBB7DA92B22342F00DC774C /* AlertFailedLoginorRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB7DA82B22342F00DC774C /* AlertFailedLoginorRegister.swift */; };
 		2BBB7DAB2B223D5C00DC774C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB7DAA2B223D5C00DC774C /* LoginViewModel.swift */; };
+		2BBB7DAD2B2240E100DC774C /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB7DAC2B2240E100DC774C /* ChatViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		2BA11B222B21FE46001FC310 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2BBB7DA82B22342F00DC774C /* AlertFailedLoginorRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFailedLoginorRegister.swift; sourceTree = "<group>"; };
 		2BBB7DAA2B223D5C00DC774C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2BBB7DAC2B2240E100DC774C /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 		2BA11B022B21FC2D001FC310 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2BBB7DAC2B2240E100DC774C /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				2BA11B1F2B21FCB0001FC310 /* HomeView.swift in Sources */,
 				2BA11B1B2B21FCA3001FC310 /* LoginViewController.swift in Sources */,
 				2BA11B0F2B21FC78001FC310 /* RegisterViewModel.swift in Sources */,
+				2BBB7DAD2B2240E100DC774C /* ChatViewModel.swift in Sources */,
 				2BBB7DA92B22342F00DC774C /* AlertFailedLoginorRegister.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

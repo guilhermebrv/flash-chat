@@ -20,11 +20,19 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         signProtocols()
+        skipLogin()
     }
     
     private func signProtocols() {
         screen?.delegate(delegate: self)
         viewModel.delegate(delegate: self)
+    }
+    
+    // FIXME: delete
+    private func skipLogin() {
+        screen?.emailTextField.text = "testing@gmail.com"
+        screen?.passwordTextField.text = "123456"
+        tappedLoginButton()
     }
 }
 

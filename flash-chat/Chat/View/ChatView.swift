@@ -27,12 +27,22 @@ class ChatView: UIView {
         return view
     }()
     
+    lazy var logoLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 22, weight: .bold)
+        label.textAlignment = .center
+        label.text = "⚡️FlashChat"
+        return label
+    }()
+    
     lazy var logoutButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.configuration = .plain()
-        button.configuration?.image = UIImage(systemName: "rectangle.portrait.and.arrow.right")
-        button.configuration?.baseForegroundColor = .systemBlue.withAlphaComponent(0.8)
+        button.configuration?.image = UIImage(systemName: "rectangle.portrait.and.arrow.right")?.withRenderingMode(.alwaysTemplate)
+        button.configuration?.baseForegroundColor = .white
         button.addTarget(self, action: #selector(tappedLogoutButton), for: .touchUpInside)
         return button
     }()
@@ -50,6 +60,29 @@ class ChatView: UIView {
         return tableview
     }()
     
+    lazy var messageTextField: UITextField = {
+        let textField = UITextField()
+        let attributedString = NSAttributedString(string: "  Write a message...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray.withAlphaComponent(0.5)])
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.attributedPlaceholder = attributedString
+        textField.textColor = .black
+        textField.backgroundColor = .white
+        textField.tintColor = .black
+        textField.layer.cornerRadius = 8
+        textField.font = .systemFont(ofSize: 18, weight: .regular)
+        return textField
+    }()
+    
+    lazy var sendButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.configuration = .plain()
+        button.configuration?.image = UIImage(systemName: "paperplane")?.withRenderingMode(.alwaysTemplate)
+        button.configuration?.baseForegroundColor = .white
+        //button.addTarget(self, action: #selector(tappedSendButton), for: .touchUpInside)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -63,8 +96,11 @@ class ChatView: UIView {
     
     private func addElements() {
         addSubview(bgView)
+        bgView.addSubview(logoLabel)
         bgView.addSubview(logoutButton)
         bgView.addSubview(chatTableView)
+        bgView.addSubview(messageTextField)
+        bgView.addSubview(sendButton)
     }
     
     private func configConstraints() {
@@ -74,13 +110,24 @@ class ChatView: UIView {
             bgView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bgView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
+            logoLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 5),
+            logoLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            
             logoutButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             logoutButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
             
             chatTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 45),
-            chatTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            chatTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -60),
             chatTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             chatTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
+            messageTextField.topAnchor.constraint(equalTo: chatTableView.bottomAnchor, constant: 15),
+            messageTextField.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            messageTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            messageTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -70),
+            
+            sendButton.centerYAnchor.constraint(equalTo: messageTextField.centerYAnchor),
+            sendButton.leadingAnchor.constraint(equalTo: messageTextField.trailingAnchor)
         ])
     }
 }

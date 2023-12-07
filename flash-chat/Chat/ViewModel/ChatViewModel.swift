@@ -7,7 +7,7 @@
 
 protocol ChatViewModelProtocol: AnyObject {
     func signOutSuccessful()
-    func signOutFailed(error: Error)
+    func signOutFailed(error: NSError)
 }
 
 import UIKit
@@ -20,12 +20,12 @@ class ChatViewModel {
     }
     
     public func signOutUser() {
-        let firebaseAuth = Auth.auth()
         do {
-          try firebaseAuth.signOut()
+          try Auth.auth().signOut()
             delegate?.signOutSuccessful()
         } catch let signOutError as NSError {
           print("Error signing out: %@", signOutError)
+            delegate?.signOutFailed(error: signOutError)
         }
     }
 }

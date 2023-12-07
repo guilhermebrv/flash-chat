@@ -19,6 +19,7 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = true
         signProtocols()
     }
     
@@ -30,11 +31,10 @@ class ChatViewController: UIViewController {
 
 extension ChatViewController: ChatViewModelProtocol {
     func signOutSuccessful() {
-        let home = HomeViewController()
-        navigationController?.pushViewController(home, animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
-    func signOutFailed(error: Error) {
-        print(error.localizedDescription)
+    func signOutFailed(error: NSError) {
+        AlertFailedLoginorRegister(controller: self).showAlert(title: "Warning", message: error.localizedDescription)
     }
 }
 

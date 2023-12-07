@@ -50,6 +50,7 @@
 		2BBB7DA02B22300E00DC774C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2BBB7D9F2B22300E00DC774C /* FirebaseStorage */; };
 		2BBB7DA22B22300E00DC774C /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 2BBB7DA12B22300E00DC774C /* FirebaseStorageCombine-Community */; };
 		2BBB7DA92B22342F00DC774C /* AlertFailedLoginorRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB7DA82B22342F00DC774C /* AlertFailedLoginorRegister.swift */; };
+		2BBB7DAB2B223D5C00DC774C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB7DAA2B223D5C00DC774C /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		2BA11B1E2B21FCB0001FC310 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2BA11B222B21FE46001FC310 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2BBB7DA82B22342F00DC774C /* AlertFailedLoginorRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFailedLoginorRegister.swift; sourceTree = "<group>"; };
+		2BBB7DAA2B223D5C00DC774C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 		2BA11B092B21FC51001FC310 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2BBB7DAA2B223D5C00DC774C /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				2BA11B172B21FC96001FC310 /* ChatViewController.swift in Sources */,
 				2BA11B192B21FC9F001FC310 /* LoginView.swift in Sources */,
 				2BA11AE22B21FBBB001FC310 /* AppDelegate.swift in Sources */,
+				2BBB7DAB2B223D5C00DC774C /* LoginViewModel.swift in Sources */,
 				2BA11B132B21FC87001FC310 /* RegisterView.swift in Sources */,
 				2BA11B152B21FC93001FC310 /* ChatView.swift in Sources */,
 				2BA11AE42B21FBBB001FC310 /* SceneDelegate.swift in Sources */,

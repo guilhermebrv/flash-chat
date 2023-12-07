@@ -18,6 +18,20 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        signProtocols()
+    }
+    
+    private func signProtocols() {
+        screen?.delegate(delegate: self)
     }
 
+}
+
+extension ChatViewController: ChatViewProtocol {
+    func tappedLogoutButton() {
+        let home = HomeViewController()
+        navigationController?.pushViewController(home, animated: true)
+    }
+    
+    
 }

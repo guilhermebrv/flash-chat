@@ -9,6 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     private var screen: LoginView?
+    private var viewModel: LoginViewModel = LoginViewModel()
     
     override func loadView() {
         screen = LoginView()
@@ -23,12 +24,29 @@ class LoginViewController: UIViewController {
     
     private func signProtocols() {
         screen?.delegate(delegate: self)
+        viewModel.delegate(delegate: self)
+    }
+}
+
+extension LoginViewController: LoginViewModelProtocol {
+    func loginSuccessful() {
+        let chat = ChatViewController()
+        navigationController?.pushViewController(chat, animated: true)
+    }
+    
+    func loginFailed(error: Error) {
+        AlertFailedLoginorRegister(controller: self).showAlert(title: "Warning", message: error.localizedDescription)
     }
 }
 
 extension LoginViewController: LoginViewProtocol {
+    func tappedBackButton() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     func tappedLoginButton() {
-        let register = RegisterViewController()
-        navigationController?.pushViewController(register, animated: true)
+        if let email = screen?.emailTextField.text, let password = screen?.passwordTextField.text {
+            viewModel.signInUser(email: email, password: password)
+        }
     }
 }

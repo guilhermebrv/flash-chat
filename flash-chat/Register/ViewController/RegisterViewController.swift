@@ -40,6 +40,10 @@ extension RegisterViewController: RegisterViewModelProtocol {
 }
 
 extension RegisterViewController: RegisterViewProtocol {
+    func tappedBackButton() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     func tappedRegisterButton() {
         if let email = screen?.emailTextField.text, let password = screen?.passwordTextField.text {
             viewModel.createUser(email: email, password: password)

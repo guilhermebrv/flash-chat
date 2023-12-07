@@ -9,6 +9,7 @@ import UIKit
 
 protocol LoginViewProtocol: AnyObject {
     func tappedLoginButton()
+    func tappedBackButton()
 }
 
 class LoginView: UIView {
@@ -24,6 +25,20 @@ class LoginView: UIView {
         view.backgroundColor = .systemBlue.withAlphaComponent(0.3)
         return view
     }()
+    
+    lazy var backButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.configuration = .plain()
+        button.configuration?.image = UIImage(systemName: "chevron.backward")
+        button.configuration?.baseForegroundColor = .systemBlue.withAlphaComponent(0.8)
+        button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc public func tappedBackButton() {
+        delegate?.tappedBackButton()
+    }
     
     lazy var emailImageView: UIImageView = {
         let imageView = UIImageView()
@@ -76,7 +91,7 @@ class LoginView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.configuration = .plain()
         button.configuration?.baseForegroundColor = .systemBlue
-        button.configuration?.attributedTitle = AttributedString("Register", attributes: AttributeContainer([NSAttributedString.Key.font :UIFont.systemFont(ofSize: 20, weight: .regular)]))
+        button.configuration?.attributedTitle = AttributedString("Login", attributes: AttributeContainer([NSAttributedString.Key.font :UIFont.systemFont(ofSize: 20, weight: .regular)]))
         button.configuration?.baseForegroundColor = .systemBlue.withAlphaComponent(0.8)
         button.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
         return button
@@ -99,6 +114,7 @@ class LoginView: UIView {
     
     private func addElements() {
         addSubview(bgView)
+        bgView.addSubview(backButton)
         bgView.addSubview(emailImageView)
         bgView.addSubview(emailTextField)
         bgView.addSubview(passwordImageView)
@@ -113,7 +129,10 @@ class LoginView: UIView {
             bgView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bgView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            emailImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
+            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            
+            emailImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
             emailImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             emailImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             emailImageView.heightAnchor.constraint(equalToConstant: 70),

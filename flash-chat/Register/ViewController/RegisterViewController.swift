@@ -9,6 +9,7 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     private var screen: RegisterView?
+    private var viewModel: RegisterViewModel = RegisterViewModel()
     
     override func loadView() {
         screen = RegisterView()
@@ -17,19 +18,37 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationController?.isNavigationBarHidden = true
+        signProtocols()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func signProtocols() {
+        screen?.delegate(delegate: self)
+        viewModel.delegate(delegate: self)
     }
-    */
+}
 
+extension RegisterViewController: RegisterViewModelProtocol {
+    func registerSuccessful() {
+        let chat = ChatViewController()
+        navigationController?.pushViewController(chat, animated: true)
+    }
+    
+    func registerFailed(error: Error) {
+        print(error.localizedDescription)
+    }
+}
+
+extension RegisterViewController: RegisterViewProtocol {
+    func tappedRegisterButton() {
+        if let email = screen?.emailTextField.text, let password = screen?.passwordTextField.text {
+            viewModel.createUser(email: email, password: password)
+        }
+        /*
+        let login = LoginViewController()
+        navigationController?.pushViewController(login, animated: true)
+         */
+    }
+    
+    
 }

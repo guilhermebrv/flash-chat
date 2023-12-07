@@ -7,39 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B3292942B209BB80068A8B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3292932B209BB80068A8B1 /* AppDelegate.swift */; };
-		2B3292962B209BB80068A8B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3292952B209BB80068A8B1 /* SceneDelegate.swift */; };
-		2B3292982B209BB80068A8B1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3292972B209BB80068A8B1 /* HomeViewController.swift */; };
-		2B32929D2B209BBB0068A8B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B32929C2B209BBB0068A8B1 /* Assets.xcassets */; };
-		2B3292A02B209BBB0068A8B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B32929E2B209BBB0068A8B1 /* LaunchScreen.storyboard */; };
-		2B3292AF2B209D740068A8B1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3292AE2B209D740068A8B1 /* HomeView.swift */; };
-		2B3292B52B20A1720068A8B1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3292B42B20A1720068A8B1 /* LoginView.swift */; };
-		2B3292B72B20A17A0068A8B1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3292B62B20A17A0068A8B1 /* RegisterView.swift */; };
-		2B3292B92B20A1820068A8B1 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3292B82B20A1820068A8B1 /* ChatView.swift */; };
-		2B3292BB2B20A1920068A8B1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3292BA2B20A1920068A8B1 /* RegisterViewController.swift */; };
-		2B3292BD2B20A19D0068A8B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3292BC2B20A19D0068A8B1 /* LoginViewController.swift */; };
-		2B3292BF2B20A1A40068A8B1 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3292BE2B20A1A40068A8B1 /* ChatViewController.swift */; };
+		2BA11AE22B21FBBB001FC310 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA11AE12B21FBBB001FC310 /* AppDelegate.swift */; };
+		2BA11AE42B21FBBB001FC310 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA11AE32B21FBBB001FC310 /* SceneDelegate.swift */; };
+		2BA11AE62B21FBBB001FC310 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA11AE52B21FBBB001FC310 /* HomeViewController.swift */; };
+		2BA11AEB2B21FBBE001FC310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA11AEA2B21FBBE001FC310 /* Assets.xcassets */; };
+		2BA11AEE2B21FBBE001FC310 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA11AEC2B21FBBE001FC310 /* LaunchScreen.storyboard */; };
+		2BA11B0F2B21FC78001FC310 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA11B0E2B21FC78001FC310 /* RegisterViewModel.swift */; };
+		2BA11B112B21FC84001FC310 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA11B102B21FC84001FC310 /* RegisterViewController.swift */; };
+		2BA11B132B21FC87001FC310 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA11B122B21FC87001FC310 /* RegisterView.swift */; };
+		2BA11B152B21FC93001FC310 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA11B142B21FC93001FC310 /* ChatView.swift */; };
+		2BA11B172B21FC96001FC310 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA11B162B21FC96001FC310 /* ChatViewController.swift */; };
+		2BA11B192B21FC9F001FC310 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA11B182B21FC9F001FC310 /* LoginView.swift */; };
+		2BA11B1B2B21FCA3001FC310 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA11B1A2B21FCA3001FC310 /* LoginViewController.swift */; };
+		2BA11B1D2B21FCAD001FC310 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA11B1C2B21FCAD001FC310 /* HomeViewModel.swift */; };
+		2BA11B1F2B21FCB0001FC310 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA11B1E2B21FCB0001FC310 /* HomeView.swift */; };
+		2BA11B232B21FE46001FC310 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BA11B222B21FE46001FC310 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B3292902B209BB80068A8B1 /* flash-chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "flash-chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B3292932B209BB80068A8B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2B3292952B209BB80068A8B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2B3292972B209BB80068A8B1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		2B32929C2B209BBB0068A8B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2B32929F2B209BBB0068A8B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2B3292A12B209BBB0068A8B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B3292AE2B209D740068A8B1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		2B3292B42B20A1720068A8B1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		2B3292B62B20A17A0068A8B1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		2B3292B82B20A1820068A8B1 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
-		2B3292BA2B20A1920068A8B1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		2B3292BC2B20A19D0068A8B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		2B3292BE2B20A1A40068A8B1 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		2BA11ADE2B21FBBB001FC310 /* flash-chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "flash-chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BA11AE12B21FBBB001FC310 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2BA11AE32B21FBBB001FC310 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2BA11AE52B21FBBB001FC310 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2BA11AEA2B21FBBE001FC310 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BA11AED2B21FBBE001FC310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2BA11AEF2B21FBBE001FC310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BA11B0E2B21FC78001FC310 /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		2BA11B102B21FC84001FC310 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		2BA11B122B21FC87001FC310 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		2BA11B142B21FC93001FC310 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		2BA11B162B21FC96001FC310 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		2BA11B182B21FC9F001FC310 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2BA11B1A2B21FCA3001FC310 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2BA11B1C2B21FCAD001FC310 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2BA11B1E2B21FCB0001FC310 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2BA11B222B21FE46001FC310 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2B32928D2B209BB80068A8B1 /* Frameworks */ = {
+		2BA11ADB2B21FBBB001FC310 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,126 +55,177 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2B3292872B209BB80068A8B1 = {
+		2BA11AD52B21FBBB001FC310 = {
 			isa = PBXGroup;
 			children = (
-				2B3292922B209BB80068A8B1 /* flash-chat */,
-				2B3292912B209BB80068A8B1 /* Products */,
+				2BA11AE02B21FBBB001FC310 /* flash-chat */,
+				2BA11ADF2B21FBBB001FC310 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2B3292912B209BB80068A8B1 /* Products */ = {
+		2BA11ADF2B21FBBB001FC310 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B3292902B209BB80068A8B1 /* flash-chat.app */,
+				2BA11ADE2B21FBBB001FC310 /* flash-chat.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2B3292922B209BB80068A8B1 /* flash-chat */ = {
+		2BA11AE02B21FBBB001FC310 /* flash-chat */ = {
 			isa = PBXGroup;
 			children = (
-				2B3292AA2B209CCD0068A8B1 /* Chat */,
-				2B3292A92B209CC80068A8B1 /* Register */,
-				2B3292A82B209CC50068A8B1 /* Login */,
-				2B3292A72B209CBA0068A8B1 /* Home */,
-				2B3292AB2B209CD50068A8B1 /* Supporting */,
-				2B3292A12B209BBB0068A8B1 /* Info.plist */,
+				2BA11B012B21FC21001FC310 /* Register */,
+				2BA11B002B21FC1D001FC310 /* Login */,
+				2BA11AFF2B21FC18001FC310 /* Home */,
+				2BA11AFE2B21FC14001FC310 /* Chat */,
+				2BA11AF52B21FBD9001FC310 /* Supporting */,
+				2BA11AEF2B21FBBE001FC310 /* Info.plist */,
+				2BA11B222B21FE46001FC310 /* GoogleService-Info.plist */,
 			);
 			path = "flash-chat";
 			sourceTree = "<group>";
 		};
-		2B3292A72B209CBA0068A8B1 /* Home */ = {
+		2BA11AF52B21FBD9001FC310 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
-				2B3292AD2B209D650068A8B1 /* View */,
-				2B3292AC2B209D5E0068A8B1 /* ViewController */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		2B3292A82B209CC50068A8B1 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				2B3292B12B20A15A0068A8B1 /* ViewController */,
-				2B3292B02B20A1560068A8B1 /* View */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		2B3292A92B209CC80068A8B1 /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				2B3292B32B20A1640068A8B1 /* ViewController */,
-				2B3292B22B20A1600068A8B1 /* View */,
-			);
-			path = Register;
-			sourceTree = "<group>";
-		};
-		2B3292AA2B209CCD0068A8B1 /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-				2B3292B82B20A1820068A8B1 /* ChatView.swift */,
-				2B3292BE2B20A1A40068A8B1 /* ChatViewController.swift */,
-			);
-			path = Chat;
-			sourceTree = "<group>";
-		};
-		2B3292AB2B209CD50068A8B1 /* Supporting */ = {
-			isa = PBXGroup;
-			children = (
-				2B3292932B209BB80068A8B1 /* AppDelegate.swift */,
-				2B3292952B209BB80068A8B1 /* SceneDelegate.swift */,
-				2B32929C2B209BBB0068A8B1 /* Assets.xcassets */,
-				2B32929E2B209BBB0068A8B1 /* LaunchScreen.storyboard */,
+				2BA11AE12B21FBBB001FC310 /* AppDelegate.swift */,
+				2BA11AE32B21FBBB001FC310 /* SceneDelegate.swift */,
+				2BA11AEA2B21FBBE001FC310 /* Assets.xcassets */,
+				2BA11AEC2B21FBBE001FC310 /* LaunchScreen.storyboard */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
 		};
-		2B3292AC2B209D5E0068A8B1 /* ViewController */ = {
+		2BA11AFE2B21FC14001FC310 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				2B3292972B209BB80068A8B1 /* HomeViewController.swift */,
+				2BA11B042B21FC39001FC310 /* View */,
+				2BA11B032B21FC32001FC310 /* ViewController */,
+				2BA11B022B21FC2D001FC310 /* ViewModel */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		2BA11AFF2B21FC18001FC310 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2BA11B0B2B21FC59001FC310 /* ViewController */,
+				2BA11B0A2B21FC54001FC310 /* ViewModel */,
+				2BA11B052B21FC41001FC310 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2BA11B002B21FC1D001FC310 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2BA11B0C2B21FC5C001FC310 /* ViewController */,
+				2BA11B092B21FC51001FC310 /* ViewModel */,
+				2BA11B062B21FC44001FC310 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2BA11B012B21FC21001FC310 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				2BA11B0D2B21FC60001FC310 /* ViewController */,
+				2BA11B082B21FC4A001FC310 /* ViewModel */,
+				2BA11B072B21FC47001FC310 /* View */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		2BA11B022B21FC2D001FC310 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2BA11B032B21FC32001FC310 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BA11B162B21FC96001FC310 /* ChatViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		2B3292AD2B209D650068A8B1 /* View */ = {
+		2BA11B042B21FC39001FC310 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2B3292AE2B209D740068A8B1 /* HomeView.swift */,
+				2BA11B142B21FC93001FC310 /* ChatView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		2B3292B02B20A1560068A8B1 /* View */ = {
+		2BA11B052B21FC41001FC310 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2B3292B42B20A1720068A8B1 /* LoginView.swift */,
+				2BA11B1E2B21FCB0001FC310 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		2B3292B12B20A15A0068A8B1 /* ViewController */ = {
+		2BA11B062B21FC44001FC310 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2B3292BC2B20A19D0068A8B1 /* LoginViewController.swift */,
+				2BA11B182B21FC9F001FC310 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2BA11B072B21FC47001FC310 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2BA11B122B21FC87001FC310 /* RegisterView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2BA11B082B21FC4A001FC310 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2BA11B0E2B21FC78001FC310 /* RegisterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2BA11B092B21FC51001FC310 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2BA11B0A2B21FC54001FC310 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2BA11B1C2B21FCAD001FC310 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2BA11B0B2B21FC59001FC310 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BA11AE52B21FBBB001FC310 /* HomeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		2B3292B22B20A1600068A8B1 /* View */ = {
+		2BA11B0C2B21FC5C001FC310 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				2B3292B62B20A17A0068A8B1 /* RegisterView.swift */,
+				2BA11B1A2B21FCA3001FC310 /* LoginViewController.swift */,
 			);
-			path = View;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
-		2B3292B32B20A1640068A8B1 /* ViewController */ = {
+		2BA11B0D2B21FC60001FC310 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				2B3292BA2B20A1920068A8B1 /* RegisterViewController.swift */,
+				2BA11B102B21FC84001FC310 /* RegisterViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -176,13 +233,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2B32928F2B209BB80068A8B1 /* flash-chat */ = {
+		2BA11ADD2B21FBBB001FC310 /* flash-chat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B3292A42B209BBB0068A8B1 /* Build configuration list for PBXNativeTarget "flash-chat" */;
+			buildConfigurationList = 2BA11AF22B21FBBE001FC310 /* Build configuration list for PBXNativeTarget "flash-chat" */;
 			buildPhases = (
-				2B32928C2B209BB80068A8B1 /* Sources */,
-				2B32928D2B209BB80068A8B1 /* Frameworks */,
-				2B32928E2B209BB80068A8B1 /* Resources */,
+				2BA11ADA2B21FBBB001FC310 /* Sources */,
+				2BA11ADB2B21FBBB001FC310 /* Frameworks */,
+				2BA11ADC2B21FBBB001FC310 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -190,25 +247,25 @@
 			);
 			name = "flash-chat";
 			productName = "flash-chat";
-			productReference = 2B3292902B209BB80068A8B1 /* flash-chat.app */;
+			productReference = 2BA11ADE2B21FBBB001FC310 /* flash-chat.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2B3292882B209BB80068A8B1 /* Project object */ = {
+		2BA11AD62B21FBBB001FC310 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					2B32928F2B209BB80068A8B1 = {
+					2BA11ADD2B21FBBB001FC310 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
 			};
-			buildConfigurationList = 2B32928B2B209BB80068A8B1 /* Build configuration list for PBXProject "flash-chat" */;
+			buildConfigurationList = 2BA11AD92B21FBBB001FC310 /* Build configuration list for PBXProject "flash-chat" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -216,53 +273,56 @@
 				en,
 				Base,
 			);
-			mainGroup = 2B3292872B209BB80068A8B1;
-			productRefGroup = 2B3292912B209BB80068A8B1 /* Products */;
+			mainGroup = 2BA11AD52B21FBBB001FC310;
+			productRefGroup = 2BA11ADF2B21FBBB001FC310 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2B32928F2B209BB80068A8B1 /* flash-chat */,
+				2BA11ADD2B21FBBB001FC310 /* flash-chat */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2B32928E2B209BB80068A8B1 /* Resources */ = {
+		2BA11ADC2B21FBBB001FC310 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B3292A02B209BBB0068A8B1 /* LaunchScreen.storyboard in Resources */,
-				2B32929D2B209BBB0068A8B1 /* Assets.xcassets in Resources */,
+				2BA11AEE2B21FBBE001FC310 /* LaunchScreen.storyboard in Resources */,
+				2BA11B232B21FE46001FC310 /* GoogleService-Info.plist in Resources */,
+				2BA11AEB2B21FBBE001FC310 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2B32928C2B209BB80068A8B1 /* Sources */ = {
+		2BA11ADA2B21FBBB001FC310 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B3292BD2B20A19D0068A8B1 /* LoginViewController.swift in Sources */,
-				2B3292982B209BB80068A8B1 /* HomeViewController.swift in Sources */,
-				2B3292AF2B209D740068A8B1 /* HomeView.swift in Sources */,
-				2B3292942B209BB80068A8B1 /* AppDelegate.swift in Sources */,
-				2B3292BB2B20A1920068A8B1 /* RegisterViewController.swift in Sources */,
-				2B3292B72B20A17A0068A8B1 /* RegisterView.swift in Sources */,
-				2B3292B92B20A1820068A8B1 /* ChatView.swift in Sources */,
-				2B3292B52B20A1720068A8B1 /* LoginView.swift in Sources */,
-				2B3292BF2B20A1A40068A8B1 /* ChatViewController.swift in Sources */,
-				2B3292962B209BB80068A8B1 /* SceneDelegate.swift in Sources */,
+				2BA11AE62B21FBBB001FC310 /* HomeViewController.swift in Sources */,
+				2BA11B1D2B21FCAD001FC310 /* HomeViewModel.swift in Sources */,
+				2BA11B112B21FC84001FC310 /* RegisterViewController.swift in Sources */,
+				2BA11B172B21FC96001FC310 /* ChatViewController.swift in Sources */,
+				2BA11B192B21FC9F001FC310 /* LoginView.swift in Sources */,
+				2BA11AE22B21FBBB001FC310 /* AppDelegate.swift in Sources */,
+				2BA11B132B21FC87001FC310 /* RegisterView.swift in Sources */,
+				2BA11B152B21FC93001FC310 /* ChatView.swift in Sources */,
+				2BA11AE42B21FBBB001FC310 /* SceneDelegate.swift in Sources */,
+				2BA11B1F2B21FCB0001FC310 /* HomeView.swift in Sources */,
+				2BA11B1B2B21FCA3001FC310 /* LoginViewController.swift in Sources */,
+				2BA11B0F2B21FC78001FC310 /* RegisterViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2B32929E2B209BBB0068A8B1 /* LaunchScreen.storyboard */ = {
+		2BA11AEC2B21FBBE001FC310 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2B32929F2B209BBB0068A8B1 /* Base */,
+				2BA11AED2B21FBBE001FC310 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -270,7 +330,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2B3292A22B209BBB0068A8B1 /* Debug */ = {
+		2BA11AF02B21FBBE001FC310 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -333,7 +393,7 @@
 			};
 			name = Debug;
 		};
-		2B3292A32B209BBB0068A8B1 /* Release */ = {
+		2BA11AF12B21FBBE001FC310 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -389,7 +449,7 @@
 			};
 			name = Release;
 		};
-		2B3292A52B209BBB0068A8B1 /* Debug */ = {
+		2BA11AF32B21FBBE001FC310 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -401,8 +461,8 @@
 				INFOPLIST_FILE = "flash-chat/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,7 +479,7 @@
 			};
 			name = Debug;
 		};
-		2B3292A62B209BBB0068A8B1 /* Release */ = {
+		2BA11AF42B21FBBE001FC310 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -431,8 +491,8 @@
 				INFOPLIST_FILE = "flash-chat/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,25 +512,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B32928B2B209BB80068A8B1 /* Build configuration list for PBXProject "flash-chat" */ = {
+		2BA11AD92B21FBBB001FC310 /* Build configuration list for PBXProject "flash-chat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2B3292A22B209BBB0068A8B1 /* Debug */,
-				2B3292A32B209BBB0068A8B1 /* Release */,
+				2BA11AF02B21FBBE001FC310 /* Debug */,
+				2BA11AF12B21FBBE001FC310 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B3292A42B209BBB0068A8B1 /* Build configuration list for PBXNativeTarget "flash-chat" */ = {
+		2BA11AF22B21FBBE001FC310 /* Build configuration list for PBXNativeTarget "flash-chat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2B3292A52B209BBB0068A8B1 /* Debug */,
-				2B3292A62B209BBB0068A8B1 /* Release */,
+				2BA11AF32B21FBBE001FC310 /* Debug */,
+				2BA11AF42B21FBBE001FC310 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 2B3292882B209BB80068A8B1 /* Project object */;
+	rootObject = 2BA11AD62B21FBBB001FC310 /* Project object */;
 }

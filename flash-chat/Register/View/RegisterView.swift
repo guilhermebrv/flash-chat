@@ -9,13 +9,12 @@ import UIKit
 
 protocol RegisterViewProtocol: AnyObject {
     func tappedRegisterButton()
-    func tappedLoginButton()
 }
 
 class RegisterView: UIView {
 
-    private weak var delegate: LoginViewProtocol?
-    public func delegate(delegate: LoginViewProtocol?){
+    private weak var delegate: RegisterViewProtocol?
+    public func delegate(delegate: RegisterViewProtocol?){
         self.delegate = delegate
     }
     
@@ -72,11 +71,11 @@ class RegisterView: UIView {
         return textField
     }()
     
-    lazy var loginButton: UIButton = {
+    lazy var registerButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.configuration = .plain()
-        button.configuration?.attributedTitle = AttributedString("Login", attributes: AttributeContainer([NSAttributedString.Key.font :UIFont.systemFont(ofSize: 20, weight: .regular)]))
+        button.configuration?.attributedTitle = AttributedString("Register", attributes: AttributeContainer([NSAttributedString.Key.font :UIFont.systemFont(ofSize: 20, weight: .regular)]))
         button.configuration?.baseForegroundColor = .systemBlue.withAlphaComponent(0.8)
         button.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
         return button
@@ -103,7 +102,7 @@ class RegisterView: UIView {
         bgView.addSubview(emailTextField)
         bgView.addSubview(passwordImageView)
         bgView.addSubview(passwordTextField)
-        bgView.addSubview(loginButton)
+        bgView.addSubview(registerButton)
     }
     
     private func configConstraints() {
@@ -113,7 +112,7 @@ class RegisterView: UIView {
             bgView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bgView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            emailImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 5),
+            emailImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
             emailImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             emailImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             emailImageView.heightAnchor.constraint(equalToConstant: 70),
@@ -133,8 +132,8 @@ class RegisterView: UIView {
             passwordTextField.trailingAnchor.constraint(equalTo: passwordImageView.trailingAnchor, constant: -35),
             passwordTextField.heightAnchor.constraint(equalToConstant: 70),
             
-            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 5),
-            loginButton.centerXAnchor.constraint(equalTo: centerXAnchor)
+            registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 5),
+            registerButton.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
 }

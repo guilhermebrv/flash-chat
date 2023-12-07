@@ -113,7 +113,7 @@ class LoginView: UIView {
             bgView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bgView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            emailImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 5),
+            emailImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
             emailImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             emailImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             emailImageView.heightAnchor.constraint(equalToConstant: 70),

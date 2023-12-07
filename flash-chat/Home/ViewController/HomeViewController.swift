@@ -2,7 +2,7 @@
 //  HomeViewController.swift
 //  flash-chat
 //
-//  Created by Guilherme Viana on 06/12/2023.
+//  Created by Guilherme Viana on 07/12/2023.
 //
 
 import UIKit
@@ -10,6 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
 
     private var screen: HomeView?
+    private var viewModel: HomeViewModel = HomeViewModel()
     
     override func loadView() {
         screen = HomeView()
@@ -18,6 +19,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = true
+        viewModel.animateLogo(logo: screen?.logoLabel ?? UILabel())
         signProtocols()
     }
 

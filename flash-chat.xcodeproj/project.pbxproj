@@ -53,6 +53,10 @@
 		2BBB7DAB2B223D5C00DC774C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB7DAA2B223D5C00DC774C /* LoginViewModel.swift */; };
 		2BBB7DAD2B2240E100DC774C /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB7DAC2B2240E100DC774C /* ChatViewModel.swift */; };
 		2BBB7DB02B224C9000DC774C /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB7DAF2B224C9000DC774C /* K.swift */; };
+		2BD95E032B23546D003028B8 /* MessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD95E022B23546D003028B8 /* MessageCellView.swift */; };
+		2BD95E052B235487003028B8 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD95E042B235487003028B8 /* MessageCell.swift */; };
+		2BD95E0A2B235556003028B8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD95E092B235556003028B8 /* Message.swift */; };
+		2BD95E0D2B2358DE003028B8 /* Extension - UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD95E0C2B2358DE003028B8 /* Extension - UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +81,10 @@
 		2BBB7DAA2B223D5C00DC774C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2BBB7DAC2B2240E100DC774C /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		2BBB7DAF2B224C9000DC774C /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		2BD95E022B23546D003028B8 /* MessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellView.swift; sourceTree = "<group>"; };
+		2BD95E042B235487003028B8 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		2BD95E092B235556003028B8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		2BD95E0C2B2358DE003028B8 /* Extension - UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension - UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +144,11 @@
 		2BA11AE02B21FBBB001FC310 /* flash-chat */ = {
 			isa = PBXGroup;
 			children = (
+				2BD95E0B2B2358D3003028B8 /* Extension */,
 				2BBB7DAE2B224C8300DC774C /* Constants */,
 				2BBB7DA32B2233C000DC774C /* Alerts */,
+				2BD95E082B235546003028B8 /* Model */,
+				2BD95E002B23544B003028B8 /* TableView Cells */,
 				2BA11B012B21FC21001FC310 /* Register */,
 				2BA11B002B21FC1D001FC310 /* Login */,
 				2BA11AFF2B21FC18001FC310 /* Home */,
@@ -312,6 +323,55 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		2BD95E002B23544B003028B8 /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2BD95E012B235458003028B8 /* Message */,
+			);
+			path = "TableView Cells";
+			sourceTree = "<group>";
+		};
+		2BD95E012B235458003028B8 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				2BD95E072B23553B003028B8 /* Cell */,
+				2BD95E062B235537003028B8 /* View */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		2BD95E062B235537003028B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2BD95E022B23546D003028B8 /* MessageCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2BD95E072B23553B003028B8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2BD95E042B235487003028B8 /* MessageCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2BD95E082B235546003028B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2BD95E092B235556003028B8 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2BD95E0B2B2358D3003028B8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2BD95E0C2B2358DE003028B8 /* Extension - UIView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -418,11 +478,13 @@
 			files = (
 				2BA11AE62B21FBBB001FC310 /* HomeViewController.swift in Sources */,
 				2BA11B1D2B21FCAD001FC310 /* HomeViewModel.swift in Sources */,
+				2BD95E0D2B2358DE003028B8 /* Extension - UIView.swift in Sources */,
 				2BA11B112B21FC84001FC310 /* RegisterViewController.swift in Sources */,
 				2BA11B172B21FC96001FC310 /* ChatViewController.swift in Sources */,
 				2BA11B192B21FC9F001FC310 /* LoginView.swift in Sources */,
 				2BA11AE22B21FBBB001FC310 /* AppDelegate.swift in Sources */,
 				2BBB7DAB2B223D5C00DC774C /* LoginViewModel.swift in Sources */,
+				2BD95E0A2B235556003028B8 /* Message.swift in Sources */,
 				2BA11B132B21FC87001FC310 /* RegisterView.swift in Sources */,
 				2BA11B152B21FC93001FC310 /* ChatView.swift in Sources */,
 				2BA11AE42B21FBBB001FC310 /* SceneDelegate.swift in Sources */,
@@ -430,8 +492,10 @@
 				2BA11B1B2B21FCA3001FC310 /* LoginViewController.swift in Sources */,
 				2BA11B0F2B21FC78001FC310 /* RegisterViewModel.swift in Sources */,
 				2BBB7DB02B224C9000DC774C /* K.swift in Sources */,
+				2BD95E032B23546D003028B8 /* MessageCellView.swift in Sources */,
 				2BBB7DAD2B2240E100DC774C /* ChatViewModel.swift in Sources */,
 				2BBB7DA92B22342F00DC774C /* AlertFailedLoginorRegister.swift in Sources */,
+				2BD95E052B235487003028B8 /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,6 +25,7 @@ class ChatViewController: UIViewController {
     
     private func signProtocols() {
         screen?.delegate(delegate: self)
+        screen?.delegateTableView(delegate: self, dataSource: self)
         viewModel.delegate(delegate: self)
     }
 }
@@ -35,6 +36,16 @@ extension ChatViewController: ChatViewModelProtocol {
     }
     func signOutFailed(error: NSError) {
         AlertFailedLoginorRegister(controller: self).showAlert(title: "Warning", message: error.localizedDescription)
+    }
+}
+
+extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Int()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 }
 

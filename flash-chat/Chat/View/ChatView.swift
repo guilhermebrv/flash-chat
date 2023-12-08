@@ -56,9 +56,14 @@ class ChatView: UIView {
         tableview.translatesAutoresizingMaskIntoConstraints = false
         tableview.showsVerticalScrollIndicator = false
         tableview.separatorStyle = .none
-        //tableView.register(ProductsTableViewCell.self, forCellReuseIdentifier: ProductsTableViewCell.identifier)
+        tableview.register(MessageCell.self, forCellReuseIdentifier: MessageCell.identifier)
         return tableview
     }()
+    
+    public func delegateTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+        chatTableView.delegate = delegate
+        chatTableView.dataSource = dataSource
+    }
     
     lazy var messageTextField: UITextField = {
         let textField = UITextField()

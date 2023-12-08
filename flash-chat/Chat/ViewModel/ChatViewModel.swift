@@ -14,6 +14,9 @@ import UIKit
 import FirebaseAuth
 
 class ChatViewModel {
+    var messages: [Message] = [Message(sender: "1@2.com", body: "Hey"),
+                               Message(sender: "a@b.com", body: "What's up!"),
+                               Message(sender: "1@2.com", body: "Bad news.")]
     private weak var delegate: ChatViewModelProtocol?
     public func delegate(delegate: ChatViewModelProtocol) {
         self.delegate = delegate

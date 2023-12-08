@@ -32,11 +32,13 @@ class MessageCell: UITableViewCell {
         NSLayoutConstraint.activate([
             screen.messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
         ])
-        NSLayoutConstraint.desac
     }
     
     public func setupCellIn(message: Message) {
         screen.messageLabel.text = message.body
+        NSLayoutConstraint.activate([
+            screen.messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+        ])
     }
     
 }

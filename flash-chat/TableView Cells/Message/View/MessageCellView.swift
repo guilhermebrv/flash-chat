@@ -38,7 +38,6 @@ class MessageCellView: UIView {
     private func configConstraints() {
         NSLayoutConstraint.activate([
             messageLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             messageLabel.heightAnchor.constraint(equalToConstant: 35),
         ])
     }

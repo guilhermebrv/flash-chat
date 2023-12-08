@@ -8,6 +8,18 @@
 import UIKit
 
 class MessageCellView: UIView {
+    
+    lazy var messageLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.backgroundColor = .systemPurple.withAlphaComponent(0.6)
+        label.layer.cornerRadius = 10
+        label.clipsToBounds = true
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 18, weight: .bold)
+        return label
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,13 +32,14 @@ class MessageCellView: UIView {
     }
     
     private func addElements() {
-        
+        addSubview(messageLabel)
     }
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            
+            messageLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            messageLabel.heightAnchor.constraint(equalToConstant: 35),
         ])
     }
-    
 }

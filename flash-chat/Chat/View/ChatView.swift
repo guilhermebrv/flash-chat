@@ -56,6 +56,8 @@ class ChatView: UIView {
         tableview.translatesAutoresizingMaskIntoConstraints = false
         tableview.showsVerticalScrollIndicator = false
         tableview.separatorStyle = .none
+        tableview.allowsSelection = false
+        tableview.contentInset = UIEdgeInsets(top: 10.0, left: 0, bottom: 10.0, right: 0)
         tableview.register(MessageCell.self, forCellReuseIdentifier: MessageCell.identifier)
         return tableview
     }()

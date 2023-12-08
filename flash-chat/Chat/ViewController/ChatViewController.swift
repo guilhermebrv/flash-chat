@@ -9,8 +9,18 @@ import UIKit
 
 class ChatViewController: UIViewController {
 
+    private var user: String
     private var screen: ChatView?
     private var viewModel: ChatViewModel = ChatViewModel()
+    
+    init(user: String) {
+        self.user = user
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         screen = ChatView()
@@ -41,11 +51,22 @@ extension ChatViewController: ChatViewModelProtocol {
 
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Int()
+        return viewModel.numberOfRowsInSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: MessageCell.identifier, for: indexPath) as? MessageCell
+        let message = viewModel.getMessage[indexPath.row]
+        if message.sender == user {
+            cell?.setupCellOut(message: message)
+        } else {
+            cell?.setupCellIn(message: message)
+        }
+        return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return viewModel.heightForRowAt
     }
 }
 

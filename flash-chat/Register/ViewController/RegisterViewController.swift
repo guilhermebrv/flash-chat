@@ -29,8 +29,8 @@ class RegisterViewController: UIViewController {
 }
 
 extension RegisterViewController: RegisterViewModelProtocol {
-    func registerSuccessful() {
-        let chat = ChatViewController()
+    func registerSuccessful(user: String) {
+        let chat = ChatViewController(user: user)
         navigationController?.pushViewController(chat, animated: true)
     }
     

@@ -26,4 +26,17 @@ class MessageCell: UITableViewCell {
         screen.pin(to: contentView)
     }
     
+    public func setupCellOut(message: Message) {
+        screen.messageLabel.text = message.body
+        screen.messageLabel.textAlignment = .right
+        NSLayoutConstraint.activate([
+            screen.messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+        ])
+        NSLayoutConstraint.desac
+    }
+    
+    public func setupCellIn(message: Message) {
+        screen.messageLabel.text = message.body
+    }
+    
 }

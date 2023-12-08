@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 
 protocol RegisterViewModelProtocol: AnyObject {
-    func registerSuccessful()
+    func registerSuccessful(user: String)
     func registerFailed(error: Error)
 }
 
@@ -23,7 +23,7 @@ class RegisterViewModel {
     public func createUser(email: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if error == nil {
-                self.delegate?.registerSuccessful()
+                self.delegate?.registerSuccessful(user: email)
             } else if let error = error {
                 self.delegate?.registerFailed(error: error)
             }

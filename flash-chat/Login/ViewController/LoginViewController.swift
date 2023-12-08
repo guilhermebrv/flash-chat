@@ -37,8 +37,8 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginViewModelProtocol {
-    func loginSuccessful() {
-        let chat = ChatViewController()
+    func loginSuccessful(user: String) {
+        let chat = ChatViewController(user: user)
         navigationController?.pushViewController(chat, animated: true)
     }
     

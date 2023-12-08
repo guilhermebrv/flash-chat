@@ -9,16 +9,29 @@ import UIKit
 
 class MessageCellView: UIView {
     
+    lazy var messageBgView: UIView = {
+        let view = UIView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemPurple.withAlphaComponent(0.6)
+        view.layer.cornerRadius = 10
+        return view
+    }()
+    
     lazy var messageLabel: UILabel = {
-        let label = UILabel()
+        let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
-        label.backgroundColor = .systemPurple.withAlphaComponent(0.6)
-        label.layer.cornerRadius = 10
         label.clipsToBounds = true
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 18, weight: .bold)
         return label
+    }()
+    
+    lazy var userImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        return imageView
     }()
 
     override init(frame: CGRect) {
@@ -32,13 +45,23 @@ class MessageCellView: UIView {
     }
     
     private func addElements() {
-        addSubview(messageLabel)
+        addSubview(messageBgView)
+        addSubview(userImageView)
+        messageBgView.addSubview(messageLabel)
     }
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            messageLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            messageLabel.heightAnchor.constraint(equalToConstant: 35),
+            messageBgView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            userImageView.topAnchor.constraint(equalTo: messageLabel.topAnchor, constant: -3),
+            userImageView.heightAnchor.constraint(equalToConstant: 30),
+            userImageView.widthAnchor.constraint(equalToConstant: 30),
+            
+            messageLabel.topAnchor.constraint(equalTo: messageBgView.topAnchor, constant: 6),
+            messageLabel.leadingAnchor.constraint(equalTo: messageBgView.leadingAnchor, constant: 6),
+            messageLabel.trailingAnchor.constraint(equalTo: messageBgView.trailingAnchor, constant: -6),
+            messageLabel.bottomAnchor.constraint(equalTo: messageBgView.bottomAnchor, constant: -6),
         ])
     }
 }

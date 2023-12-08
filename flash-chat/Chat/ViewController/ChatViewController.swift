@@ -62,6 +62,9 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell?.setupCellIn(message: message)
         }
+        if indexPath.row > 0 && message.sender == viewModel.getMessage[indexPath.row - 1].sender {
+            cell?.twoMessagesInARow()
+        }
         return cell ?? UITableViewCell()
     }
     

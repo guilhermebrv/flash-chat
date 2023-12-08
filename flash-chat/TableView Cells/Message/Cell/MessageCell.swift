@@ -29,16 +29,24 @@ class MessageCell: UITableViewCell {
     public func setupCellOut(message: Message) {
         screen.messageLabel.text = message.body
         screen.messageLabel.textAlignment = .right
+        screen.userImageView.image = UIImage(named: "MeAvatar")
         NSLayoutConstraint.activate([
-            screen.messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+            screen.messageLabel.trailingAnchor.constraint(equalTo: screen.userImageView.leadingAnchor, constant: -15),
+            screen.userImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
         ])
     }
     
     public func setupCellIn(message: Message) {
         screen.messageLabel.text = message.body
+        screen.userImageView.image = UIImage(named: "YouAvatar")
         NSLayoutConstraint.activate([
-            screen.messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            screen.messageLabel.leadingAnchor.constraint(equalTo: screen.userImageView.trailingAnchor, constant: 15),
+            screen.userImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
         ])
+    }
+    
+    public func twoMessagesInARow() {
+        screen.userImageView.image = .none
     }
     
 }

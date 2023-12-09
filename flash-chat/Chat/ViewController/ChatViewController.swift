@@ -44,25 +44,10 @@ class ChatViewController: UIViewController {
     }
     
     private func loadMessages() {
-        
-        database.collection(K.FStore.collectionName).addSnapshotListener { querySnapshot, error in
-            if error == nil {
-                if let snapshotDocuments = querySnapshot?.documents {
-                    self.viewModel.messages = []
-                    for doc in snapshotDocuments {
-                        let data = doc.data()
-                        if let sender = data[K.FStore.senderField] as? String, let body = data[K.FStore.bodyField] as? String {
-                            let message = Message(sender: sender, body: body)
-                            self.viewModel.messages.append(message)
-                            
-                            DispatchQueue.main.async {
-                                self.screen?.chatTableView.reloadData()
-                            }
-                        }
-                    }
-                }
-            } else {
-                AlertFailedLoginorRegister(controller: self).showAlert(title: "Warning", message: "There was an issue retrieving your data from the Firestore database - \(String(describing: error?.localizedDescription))")
+        viewModel.getMessageData(from: database)
+        viewModel.messagesUpdated = { [weak self] in
+            DispatchQueue.main.async {
+                self?.screen?.chatTableView.reloadData()
             }
         }
     }
@@ -103,15 +88,8 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ChatViewController: ChatViewProtocol {
     func tappedSendButton() {
-        if let messageBody = screen?.messageTextField.text {
-            database.collection(K.FStore.collectionName).addDocument(data: [K.FStore.senderField: user, K.FStore.bodyField: messageBody]) { error in
-                if error == nil {
-                    print("sucessfully saving data to database")
-                } else {
-                    
-                    AlertFailedLoginorRegister(controller: self).showAlert(title: "Warning", message: "There was an issue trying to save your data to the Firestore database - \(String(describing: error?.localizedDescription))")
-                }
-            }
+        if let textField = screen?.messageTextField {
+            viewModel.saveMessageData(from: textField, user: user, to: database)
         }
     }
     

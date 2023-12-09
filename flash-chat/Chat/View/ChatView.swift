@@ -11,6 +11,7 @@ import UIKit
 
 protocol ChatViewProtocol: AnyObject {
     func tappedLogoutButton()
+    func tappedSendButton()
 }
 
 class ChatView: UIView {
@@ -88,9 +89,13 @@ class ChatView: UIView {
         button.configuration = .plain()
         button.configuration?.image = UIImage(systemName: "paperplane")?.withRenderingMode(.alwaysTemplate)
         button.configuration?.baseForegroundColor = .white
-        //button.addTarget(self, action: #selector(tappedSendButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(tappedSendButton), for: .touchUpInside)
         return button
     }()
+    
+    @objc public func tappedSendButton() {
+        delegate?.tappedSendButton()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

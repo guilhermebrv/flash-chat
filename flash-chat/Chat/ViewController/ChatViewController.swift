@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class ChatViewController: UIViewController {
 
     private var user: String
+    private var database = Firestore.firestore()
     private var screen: ChatView?
     private var viewModel: ChatViewModel = ChatViewModel()
     
@@ -17,7 +20,7 @@ class ChatViewController: UIViewController {
         self.user = user
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -30,6 +33,7 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
+        loadMessages()
         signProtocols()
     }
     
@@ -37,6 +41,30 @@ class ChatViewController: UIViewController {
         screen?.delegate(delegate: self)
         screen?.delegateTableView(delegate: self, dataSource: self)
         viewModel.delegate(delegate: self)
+    }
+    
+    private func loadMessages() {
+        
+        database.collection(K.FStore.collectionName).addSnapshotListener { querySnapshot, error in
+            if error == nil {
+                if let snapshotDocuments = querySnapshot?.documents {
+                    self.viewModel.messages = []
+                    for doc in snapshotDocuments {
+                        let data = doc.data()
+                        if let sender = data[K.FStore.senderField] as? String, let body = data[K.FStore.bodyField] as? String {
+                            let message = Message(sender: sender, body: body)
+                            self.viewModel.messages.append(message)
+                            
+                            DispatchQueue.main.async {
+                                self.screen?.chatTableView.reloadData()
+                            }
+                        }
+                    }
+                }
+            } else {
+                AlertFailedLoginorRegister(controller: self).showAlert(title: "Warning", message: "There was an issue retrieving your data from the Firestore database - \(String(describing: error?.localizedDescription))")
+            }
+        }
     }
 }
 
@@ -74,6 +102,19 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ChatViewController: ChatViewProtocol {
+    func tappedSendButton() {
+        if let messageBody = screen?.messageTextField.text {
+            database.collection(K.FStore.collectionName).addDocument(data: [K.FStore.senderField: user, K.FStore.bodyField: messageBody]) { error in
+                if error == nil {
+                    print("sucessfully saving data to database")
+                } else {
+                    
+                    AlertFailedLoginorRegister(controller: self).showAlert(title: "Warning", message: "There was an issue trying to save your data to the Firestore database - \(String(describing: error?.localizedDescription))")
+                }
+            }
+        }
+    }
+    
     func tappedLogoutButton() {
         viewModel.signOutUser()
     }

@@ -35,13 +35,16 @@ class ChatViewModel {
     }
     
     public func getMessageData(from database: Firestore) {
-        database.collection(K.FStore.collectionName).addSnapshotListener { querySnapshot, error in
+        database.collection(K.FStore.collectionName)
+            .order(by: K.FStore.dateField)
+            .addSnapshotListener { querySnapshot, error in
             if error == nil {
                 if let snapshotDocuments = querySnapshot?.documents {
                     self.messages = []
                     for doc in snapshotDocuments {
                         let data = doc.data()
-                        if let sender = data[K.FStore.senderField] as? String, let body = data[K.FStore.bodyField] as? String {
+                        if let sender = data[K.FStore.senderField] as? String, 
+                            let body = data[K.FStore.bodyField] as? String {
                             let message = Message(sender: sender, body: body)
                             self.messages.append(message)
                         }
@@ -56,7 +59,10 @@ class ChatViewModel {
     
     public func saveMessageData(from textField: UITextField, user: String, to database: Firestore) {
         if let message = textField.text {
-            database.collection(K.FStore.collectionName).addDocument(data: [K.FStore.senderField: user, K.FStore.bodyField: message]) { error in
+            database.collection(K.FStore.collectionName)
+                .addDocument(data: [K.FStore.senderField: user,
+                                    K.FStore.bodyField: message,
+                                    K.FStore.dateField: Date().timeIntervalSince1970]) { error in
                 if error == nil {
                     textField.text = ""
                     print("sucessfully saving data to database")

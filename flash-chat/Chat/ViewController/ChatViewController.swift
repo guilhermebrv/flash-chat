@@ -36,7 +36,9 @@ class ChatViewController: UIViewController {
         loadMessages()
         signProtocols()
     }
-    
+} 
+
+extension ChatViewController {
     private func signProtocols() {
         screen?.delegate(delegate: self)
         screen?.delegateTableView(delegate: self, dataSource: self)
@@ -88,7 +90,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ChatViewController: ChatViewProtocol {
     func tappedSendButton() {
-        if let textField = screen?.messageTextField {
+        if let textField = screen?.messageTextField, screen?.messageTextField.text != "" {
             viewModel.saveMessageData(from: textField, user: user, to: database)
         }
     }

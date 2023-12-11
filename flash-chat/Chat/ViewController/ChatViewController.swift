@@ -32,13 +32,9 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavBar()
+        navigationController?.navigationBar.barTintColor = .systemPurple.withAlphaComponent(0.6)
         loadMessages()
         signProtocols()
-    }
-    
-    private func setupNavBar() {
-        navigationController?.navigationBar.backgroundColor = .systemPurple.withAlphaComponent(0.6)
     }
 }
 
@@ -89,6 +85,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell?.setupCellIn(message: message)
         }
+        cell?.setupCellOut(message: message)
         if indexPath.row > 0 && message.sender == viewModel.getMessage[indexPath.row - 1].sender {
             cell?.twoMessagesInARow()
         }

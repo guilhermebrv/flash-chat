@@ -19,13 +19,18 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = true
+        setupNavBar()
         viewModel.animateLogo(logo: screen?.logoLabel ?? UILabel())
         signProtocols()
     }
 
     private func signProtocols() {
         screen?.delegate(delegate: self)
+    }
+    
+    private func setupNavBar() {
+        navigationController?.navigationBar.barTintColor = .systemPurple.withAlphaComponent(0.6)
+        UINavigationBar.appearance().backgroundColor = .systemPurple.withAlphaComponent(0.6)
     }
 }
 

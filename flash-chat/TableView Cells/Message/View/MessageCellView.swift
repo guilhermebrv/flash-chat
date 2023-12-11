@@ -67,7 +67,7 @@ class MessageCellView: UIView {
             
             hourLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             
-            userImageView.topAnchor.constraint(equalTo: messageLabel.topAnchor, constant: -3),
+            userImageView.centerYAnchor.constraint(equalTo: messageBgView.centerYAnchor),
             userImageView.heightAnchor.constraint(equalToConstant: 30),
             userImageView.widthAnchor.constraint(equalToConstant: 30),
             

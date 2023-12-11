@@ -30,8 +30,17 @@ class ChatViewModel {
         return messages.count
     }
     
-    public var heightForRowAt: CGFloat {
-        return 40
+    public func heightForRowAt(width: CGFloat, indexPath: IndexPath) -> CGFloat {
+        let message = messages[indexPath.row].body.height(withConstrainedWidth: width - 78 - 60, font: .systemFont(ofSize: 18, weight: .bold))
+        return message + 18
+    }
+    
+    public func getHour() -> String {
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let formattedDate = dateFormatter.string(from: currentDate)
+        return formattedDate
     }
     
     public func getMessageData(from database: Firestore) {
@@ -44,8 +53,9 @@ class ChatViewModel {
                     for doc in snapshotDocuments {
                         let data = doc.data()
                         if let sender = data[K.FStore.senderField] as? String, 
-                            let body = data[K.FStore.bodyField] as? String {
-                            let message = Message(sender: sender, body: body)
+                            let body = data[K.FStore.bodyField] as? String,
+                            let hour = data[K.FStore.hourField] as? String {
+                            let message = Message(sender: sender, body: body, hour: hour)
                             self.messages.append(message)
                         }
                     }
@@ -62,7 +72,8 @@ class ChatViewModel {
             database.collection(K.FStore.collectionName)
                 .addDocument(data: [K.FStore.senderField: user,
                                     K.FStore.bodyField: message,
-                                    K.FStore.dateField: Date().timeIntervalSince1970]) { error in
+                                    K.FStore.dateField: Date().timeIntervalSince1970,
+                                    K.FStore.hourField: self.getHour()]) { error in
                 if error == nil {
                     textField.text = ""
                     print("sucessfully saving data to database")

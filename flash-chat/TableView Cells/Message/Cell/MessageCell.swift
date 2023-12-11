@@ -29,20 +29,24 @@ class MessageCell: UITableViewCell {
     public func setupCellOut(message: Message) {
         screen.messageLabel.text = message.body
         screen.userImageView.image = UIImage(named: "MeAvatar")
+        screen.hourLabel.text = message.hour
         NSLayoutConstraint.activate([
-            screen.messageBgView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 15),
+            screen.messageBgView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 75),
             screen.messageLabel.trailingAnchor.constraint(equalTo: screen.userImageView.leadingAnchor, constant: -15),
             screen.userImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+            screen.hourLabel.trailingAnchor.constraint(equalTo: screen.messageLabel.leadingAnchor, constant: -15)
         ])
     }
     
     public func setupCellIn(message: Message) {
         screen.messageLabel.text = message.body
+        screen.messageBgView.backgroundColor = .systemPurple.withAlphaComponent(0.2)
         screen.userImageView.image = UIImage(named: "YouAvatar")
         NSLayoutConstraint.activate([
-            screen.messageLabel.leadingAnchor.constraint(equalTo: screen.userImageView.trailingAnchor, constant: 15),
+            screen.messageLabel.leadingAnchor.constraint(equalTo: screen.userImageView.trailingAnchor, constant: 75),
             screen.messageBgView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -15),
             screen.userImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            screen.hourLabel.leadingAnchor.constraint(equalTo: screen.messageLabel.trailingAnchor, constant: 15),
         ])
     }
     

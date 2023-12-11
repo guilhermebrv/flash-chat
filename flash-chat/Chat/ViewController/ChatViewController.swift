@@ -32,14 +32,19 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = true
+        setupNavBar()
         loadMessages()
         signProtocols()
     }
-} 
+    
+    private func setupNavBar() {
+        navigationController?.navigationBar.backgroundColor = .systemPurple.withAlphaComponent(0.6)
+    }
+}
 
 extension ChatViewController {
     private func signProtocols() {
+        screen?.messageTextField.delegate = self
         screen?.delegate(delegate: self)
         screen?.delegateTableView(delegate: self, dataSource: self)
         viewModel.delegate(delegate: self)
@@ -50,8 +55,15 @@ extension ChatViewController {
         viewModel.messagesUpdated = { [weak self] in
             DispatchQueue.main.async {
                 self?.screen?.chatTableView.reloadData()
+                self?.screen?.chatTableView.scrollToBottom(animated: false)
             }
         }
+    }
+}
+
+extension ChatViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
     }
 }
 
@@ -84,7 +96,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return viewModel.heightForRowAt
+        return viewModel.heightForRowAt(width: tableView.frame.width, indexPath: indexPath)
     }
 }
 

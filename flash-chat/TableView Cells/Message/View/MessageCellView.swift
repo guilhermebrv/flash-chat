@@ -27,6 +27,15 @@ class MessageCellView: UIView {
         return label
     }()
     
+    lazy var hourLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .lightGray
+        label.text = "00:00"
+        label.font = .systemFont(ofSize: 18, weight: .bold)
+        return label
+    }()
+    
     lazy var userImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -36,6 +45,7 @@ class MessageCellView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .white
         addElements()
         configConstraints()
     }
@@ -47,12 +57,15 @@ class MessageCellView: UIView {
     private func addElements() {
         addSubview(messageBgView)
         addSubview(userImageView)
+        addSubview(hourLabel)
         messageBgView.addSubview(messageLabel)
     }
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
             messageBgView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            hourLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             
             userImageView.topAnchor.constraint(equalTo: messageLabel.topAnchor, constant: -3),
             userImageView.heightAnchor.constraint(equalToConstant: 30),

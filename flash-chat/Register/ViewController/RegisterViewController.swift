@@ -16,6 +16,11 @@ class RegisterViewController: UIViewController {
         view = screen
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBar()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         signProtocols()
@@ -24,6 +29,20 @@ class RegisterViewController: UIViewController {
     private func signProtocols() {
         screen?.delegate(delegate: self)
         viewModel.delegate(delegate: self)
+    }
+}
+
+extension RegisterViewController {
+    private func setupNavigationBar() {
+        navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.tintColor = .white
+        navigationItem.title = "⚡️FlashChat"
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .systemPurple.withAlphaComponent(0.6)
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white,
+                                          NSAttributedString.Key.font : UIFont.systemFont(ofSize: 22, weight: .bold)]
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
     }
 }
 

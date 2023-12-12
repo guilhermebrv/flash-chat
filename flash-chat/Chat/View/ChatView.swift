@@ -10,7 +10,6 @@ import UIKit
 import UIKit
 
 protocol ChatViewProtocol: AnyObject {
-    func tappedLogoutButton()
     func tappedSendButton()
 }
 
@@ -27,30 +26,6 @@ class ChatView: UIView {
         view.backgroundColor = .systemPurple.withAlphaComponent(0.6)
         return view
     }()
-    
-    lazy var logoLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white
-        label.font = .systemFont(ofSize: 22, weight: .bold)
-        label.textAlignment = .center
-        label.text = "⚡️FlashChat"
-        return label
-    }()
-    
-    lazy var logoutButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.configuration = .plain()
-        button.configuration?.image = UIImage(systemName: "rectangle.portrait.and.arrow.right")?.withRenderingMode(.alwaysTemplate)
-        button.configuration?.baseForegroundColor = .white
-        button.addTarget(self, action: #selector(tappedLogoutButton), for: .touchUpInside)
-        return button
-    }()
-    
-    @objc public func tappedLogoutButton() {
-        delegate?.tappedLogoutButton()
-    }
     
     lazy var chatTableView: UITableView = {
         let tableview = UITableView()
@@ -111,8 +86,6 @@ class ChatView: UIView {
     
     private func addElements() {
         addSubview(bgView)
-        bgView.addSubview(logoLabel)
-        bgView.addSubview(logoutButton)
         bgView.addSubview(chatTableView)
         bgView.addSubview(messageTextField)
         bgView.addSubview(sendButton)
@@ -125,13 +98,7 @@ class ChatView: UIView {
             bgView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bgView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            logoLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 5),
-            logoLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            logoutButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            logoutButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
-            
-            chatTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 45),
+            chatTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             chatTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             chatTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             chatTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -60),

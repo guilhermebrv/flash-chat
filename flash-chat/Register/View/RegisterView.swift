@@ -9,7 +9,6 @@ import UIKit
 
 protocol RegisterViewProtocol: AnyObject {
     func tappedRegisterButton()
-    func tappedBackButton()
 }
 
 class RegisterView: UIView {
@@ -22,23 +21,9 @@ class RegisterView: UIView {
     lazy var bgView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemBlue.withAlphaComponent(0.1)
+        view.backgroundColor = .systemPurple.withAlphaComponent(0.1)
         return view
     }()
-    
-    lazy var backButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.configuration = .plain()
-        button.configuration?.image = UIImage(systemName: "chevron.backward")
-        button.configuration?.baseForegroundColor = .systemBlue.withAlphaComponent(0.8)
-        button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
-        return button
-    }()
-    
-    @objc public func tappedBackButton() {
-        delegate?.tappedBackButton()
-    }
     
     lazy var emailImageView: UIImageView = {
         let imageView = UIImageView()
@@ -91,7 +76,7 @@ class RegisterView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.configuration = .plain()
         button.configuration?.attributedTitle = AttributedString("Register", attributes: AttributeContainer([NSAttributedString.Key.font :UIFont.systemFont(ofSize: 20, weight: .regular)]))
-        button.configuration?.baseForegroundColor = .systemBlue.withAlphaComponent(0.8)
+        button.configuration?.baseForegroundColor = .systemPurple.withAlphaComponent(0.8)
         button.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
         return button
     }()
@@ -113,7 +98,6 @@ class RegisterView: UIView {
     
     private func addElements() {
         addSubview(bgView)
-        bgView.addSubview(backButton)
         bgView.addSubview(emailImageView)
         bgView.addSubview(emailTextField)
         bgView.addSubview(passwordImageView)
@@ -127,10 +111,7 @@ class RegisterView: UIView {
             bgView.bottomAnchor.constraint(equalTo: bottomAnchor),
             bgView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bgView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
-            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            
+        
             emailImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
             emailImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             emailImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),

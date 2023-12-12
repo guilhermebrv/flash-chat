@@ -15,6 +15,10 @@ class LoginViewController: UIViewController {
         screen = LoginView()
         view = screen
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBar()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +36,20 @@ class LoginViewController: UIViewController {
         screen?.emailTextField.text = "testing@gmail.com"
         screen?.passwordTextField.text = "123456"
         tappedLoginButton()
+    }
+}
+
+extension LoginViewController {
+    private func setupNavigationBar() {
+        navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.tintColor = .white
+        navigationItem.title = "⚡️FlashChat"
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .systemPurple.withAlphaComponent(0.6)
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white,
+                                          NSAttributedString.Key.font : UIFont.systemFont(ofSize: 22, weight: .bold)]
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
     }
 }
 

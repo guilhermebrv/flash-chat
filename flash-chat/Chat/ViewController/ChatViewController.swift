@@ -30,9 +30,13 @@ class ChatViewController: UIViewController {
         view = screen
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBar()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.barTintColor = .systemPurple.withAlphaComponent(0.6)
         loadMessages()
         signProtocols()
     }
@@ -45,7 +49,6 @@ extension ChatViewController {
         screen?.delegateTableView(delegate: self, dataSource: self)
         viewModel.delegate(delegate: self)
     }
-    
     private func loadMessages() {
         viewModel.getMessageData(from: database)
         viewModel.messagesUpdated = { [weak self] in
@@ -54,6 +57,16 @@ extension ChatViewController {
                 self?.screen?.chatTableView.scrollToBottom(animated: false)
             }
         }
+    }
+    private func setupNavigationBar() {
+        navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.tintColor = .white
+        navigationItem.hidesBackButton = true
+        navigationItem.title = "⚡️FlashChat"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "rectangle.portrait.and.arrow.right"), style: .plain, target: self, action: #selector(tappedLogoutButton))
+    }
+    @objc private func tappedLogoutButton() {
+        viewModel.signOutUser()
     }
 }
 
@@ -102,9 +115,5 @@ extension ChatViewController: ChatViewProtocol {
         if let textField = screen?.messageTextField, screen?.messageTextField.text != "" {
             viewModel.saveMessageData(from: textField, user: user, to: database)
         }
-    }
-    
-    func tappedLogoutButton() {
-        viewModel.signOutUser()
     }
 }

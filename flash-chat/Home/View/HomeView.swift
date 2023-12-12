@@ -25,7 +25,7 @@ class HomeView: UIView {
         label.text = "⚡️FlashChat"
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 40, weight: .bold)
-        label.textColor = .systemBlue
+        label.textColor = .systemPurple.withAlphaComponent(0.8)
         return label
     }()
     
@@ -34,8 +34,8 @@ class HomeView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.configuration = .tinted()
         button.configuration?.attributedTitle = AttributedString("Register", attributes: AttributeContainer([NSAttributedString.Key.font :UIFont.systemFont(ofSize: 25, weight: .regular)]))
-        button.configuration?.baseBackgroundColor = .systemBlue.withAlphaComponent(0.3)
-        button.configuration?.baseForegroundColor = .systemBlue.withAlphaComponent(0.8)
+        button.configuration?.baseBackgroundColor = .systemPurple.withAlphaComponent(0.3)
+        button.configuration?.baseForegroundColor = .systemPurple.withAlphaComponent(0.8)
         button.addTarget(self, action: #selector(tappedRegisterButton), for: .touchUpInside)
         return button
     }()
@@ -49,7 +49,7 @@ class HomeView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.configuration = .tinted()
         button.configuration?.attributedTitle = AttributedString("Log in", attributes: AttributeContainer([NSAttributedString.Key.font :UIFont.systemFont(ofSize: 25, weight: .regular)]))
-        button.configuration?.baseBackgroundColor = .systemBlue
+        button.configuration?.baseBackgroundColor = .systemPurple
         button.configuration?.baseForegroundColor = .white
         button.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
         return button

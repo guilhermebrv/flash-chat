@@ -17,20 +17,23 @@ class HomeViewController: UIViewController {
         view = screen
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavBar()
         viewModel.animateLogo(logo: screen?.logoLabel ?? UILabel())
         signProtocols()
     }
 
     private func signProtocols() {
         screen?.delegate(delegate: self)
-    }
-    
-    private func setupNavBar() {
-        navigationController?.navigationBar.barTintColor = .systemPurple.withAlphaComponent(0.6)
-        UINavigationBar.appearance().backgroundColor = .systemPurple.withAlphaComponent(0.6)
     }
 }
 

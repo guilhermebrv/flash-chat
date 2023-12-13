@@ -1,6 +1,6 @@
 # Flash Chat Messaging App
 
-This project is a culmination of the skills acquired during the ["iOS & Swift - The Complete iOS App Development Bootcamp"](https://www.udemy.com/course/ios-13-app-development-bootcamp) by Angela Yu on Udemy.
+This project is a culmination of the skills acquired during the [iOS & Swift - The Complete iOS App Development Bootcamp](https://www.udemy.com/course/ios-13-app-development-bootcamp) by Angela Yu on Udemy.
 
 ## Project Overview
 
@@ -28,7 +28,7 @@ This project is a culmination of the skills acquired during the ["iOS & Swift - 
 2. **Open in Xcode:**
 - Launch the project in Xcode and run it on your preferred iOS simulator or device.
 
-3. **Explore and Calculate:**
+3. **Explore and start messaging:**
 - Register, log in, and log out securely using FirebaseAuth.
 - Input messages, and witness real-time updates as the data syncs with Firebase Firestore.
 - Experience a smooth and intuitive messaging interface with dynamic cell sizing and keyboard management.

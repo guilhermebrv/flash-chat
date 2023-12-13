@@ -4,9 +4,8 @@ This project is a culmination of the skills acquired during the ["iOS & Swift - 
 
 ## Project Overview
 
-<img src="(https://github.com/guilhermebrv/flash-chat/assets/104163003/0c517b43-d15f-4c34-a52d-9420739c79ca)" width="180" height="400" />
-<img src="(https://github.com/guilhermebrv/flash-chat/assets/104163003/d260c94e-37f2-4169-bd74-eaef6c5ad37a)" width="180" height="400" />
-<img src="(https://github.com/guilhermebrv/flash-chat/assets/104163003/05ef67a5-6843-4da2-a9fb-efda11ef98d8)" width="180" height="400" />
+<img src="https://github.com/guilhermebrv/flash-chat/assets/104163003/d260c94e-37f2-4169-bd74-eaef6c5ad37a" width="180" height="400" />
+<img src="https://github.com/guilhermebrv/flash-chat/assets/104163003/0c517b43-d15f-4c34-a52d-9420739c79ca" width="180" height="400" />
 
 ## Key Features
 

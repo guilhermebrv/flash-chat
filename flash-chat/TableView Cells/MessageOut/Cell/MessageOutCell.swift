@@ -36,4 +36,3 @@ class MessageOutCell: UITableViewCell {
         screen.userImageView.image = .none
     }
 }
-

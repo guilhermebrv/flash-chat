@@ -93,7 +93,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = viewModel.getMessage[indexPath.row]
         if message.sender == user {
-            let cellOut = tableView.dequeueReusableCell(withIdentifier: MessageCellOut.identifier, for: indexPath) as? MessageCellOut
+            let cellOut = tableView.dequeueReusableCell(withIdentifier: MessageOutCell.identifier, for: indexPath) as? MessageOutCell
             cellOut?.setupCellOut(message: message)
             if indexPath.row > 0 && message.sender == viewModel.getMessage[indexPath.row - 1].sender {
                 cellOut?.twoMessagesInARow()

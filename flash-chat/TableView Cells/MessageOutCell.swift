@@ -1,5 +1,5 @@
 //
-//  MessageCellOut.swift
+//  MessageOutCell.swift
 //  flash-chat
 //
 //  Created by Guilherme Viana on 13/12/2023.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class MessageCellOut: UITableViewCell {
+class MessageOutCell: UITableViewCell {
     
-    static let identifier: String = String(describing: MessageCellOut.self)
+    static let identifier: String = String(describing: MessageOutCell.self)
     private var screen: MessageCellOutView = MessageCellOutView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -36,3 +36,4 @@ class MessageCellOut: UITableViewCell {
         screen.userImageView.image = .none
     }
 }
+

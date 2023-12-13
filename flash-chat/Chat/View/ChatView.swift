@@ -35,7 +35,7 @@ class ChatView: UIView {
         tableview.backgroundColor = .white
         tableview.allowsSelection = false
         tableview.contentInset = UIEdgeInsets(top: 10.0, left: 0, bottom: 10.0, right: 0)
-        tableview.register(MessageCellOut.self, forCellReuseIdentifier: MessageCellOut.identifier)
+        tableview.register(MessageOutCell.self, forCellReuseIdentifier: MessageOutCell.identifier)
         tableview.register(MessageInCell.self, forCellReuseIdentifier: MessageInCell.identifier)
 
         return tableview

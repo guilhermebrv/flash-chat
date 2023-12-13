@@ -1,5 +1,5 @@
 //
-//  MessageCellView.swift
+//  MessageCellOutView.swift
 //  flash-chat
 //
 //  Created by Guilherme Viana on 08/12/2023.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class MessageCellView: UIView {
-    
+class MessageCellOutView: UIView {
+
     lazy var messageBgView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -39,7 +39,6 @@ class MessageCellView: UIView {
     lazy var userImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
 
@@ -62,19 +61,23 @@ class MessageCellView: UIView {
     }
     
     private func configConstraints() {
-        NSLayoutConstraint.activate([
-            messageBgView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            
-            hourLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            
-            userImageView.centerYAnchor.constraint(equalTo: messageBgView.centerYAnchor),
-            userImageView.heightAnchor.constraint(equalToConstant: 30),
-            userImageView.widthAnchor.constraint(equalToConstant: 30),
-            
-            messageLabel.topAnchor.constraint(equalTo: messageBgView.topAnchor, constant: 6),
-            messageLabel.leadingAnchor.constraint(equalTo: messageBgView.leadingAnchor, constant: 6),
-            messageLabel.trailingAnchor.constraint(equalTo: messageBgView.trailingAnchor, constant: -6),
-            messageLabel.bottomAnchor.constraint(equalTo: messageBgView.bottomAnchor, constant: -6),
-        ])
-    }
+    NSLayoutConstraint.activate([
+        messageBgView.centerYAnchor.constraint(equalTo: centerYAnchor),
+        messageBgView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 75),
+        messageBgView.trailingAnchor.constraint(equalTo: userImageView.leadingAnchor, constant: -15),
+        
+        hourLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+        hourLabel.trailingAnchor.constraint(equalTo: messageLabel.leadingAnchor, constant: -15),
+        
+        userImageView.centerYAnchor.constraint(equalTo: messageBgView.centerYAnchor),
+        userImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+        userImageView.heightAnchor.constraint(equalToConstant: 30),
+        userImageView.widthAnchor.constraint(equalToConstant: 30),
+        
+        messageLabel.topAnchor.constraint(equalTo: messageBgView.topAnchor, constant: 6),
+        messageLabel.leadingAnchor.constraint(equalTo: messageBgView.leadingAnchor, constant: 6),
+        messageLabel.trailingAnchor.constraint(equalTo: messageBgView.trailingAnchor, constant: -6),
+        messageLabel.bottomAnchor.constraint(equalTo: messageBgView.bottomAnchor, constant: -6)
+    ])
+}
 }

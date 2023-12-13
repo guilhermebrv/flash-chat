@@ -91,18 +91,22 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MessageCell.identifier, for: indexPath) as? MessageCell
         let message = viewModel.getMessage[indexPath.row]
         if message.sender == user {
-            cell?.setupCellOut(message: message)
+            let cellOut = tableView.dequeueReusableCell(withIdentifier: MessageCellOut.identifier, for: indexPath) as? MessageCellOut
+            cellOut?.setupCellOut(message: message)
+            if indexPath.row > 0 && message.sender == viewModel.getMessage[indexPath.row - 1].sender {
+                cellOut?.twoMessagesInARow()
+            }
+            return cellOut ?? UITableViewCell()
         } else {
-            cell?.setupCellIn(message: message)
+            let cellIn = tableView.dequeueReusableCell(withIdentifier: MessageInCell.identifier, for: indexPath) as? MessageInCell
+            cellIn?.setupCellIn(message: message)
+            if indexPath.row > 0 && message.sender == viewModel.getMessage[indexPath.row - 1].sender {
+                cellIn?.twoMessagesInARow()
+            }
+            return cellIn ?? UITableViewCell()
         }
-        cell?.setupCellOut(message: message)
-        if indexPath.row > 0 && message.sender == viewModel.getMessage[indexPath.row - 1].sender {
-            cell?.twoMessagesInARow()
-        }
-        return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

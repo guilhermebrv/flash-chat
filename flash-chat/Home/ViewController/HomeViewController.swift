@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
     }
     override func viewDidLoad() {
         super.viewDidLoad()

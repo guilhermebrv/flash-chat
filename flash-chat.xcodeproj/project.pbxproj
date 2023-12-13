@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B4A1BD32B29CDC0009F71E5 /* MessageCellInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4A1BD22B29CDC0009F71E5 /* MessageCellInView.swift */; };
+		2B4A1BD52B29CDD8009F71E5 /* MessageInCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4A1BD42B29CDD8009F71E5 /* MessageInCell.swift */; };
+		2B4A1BD72B29DD18009F71E5 /* MessageCellOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4A1BD62B29DD18009F71E5 /* MessageCellOut.swift */; };
 		2BA11AE22B21FBBB001FC310 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA11AE12B21FBBB001FC310 /* AppDelegate.swift */; };
 		2BA11AE42B21FBBB001FC310 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA11AE32B21FBBB001FC310 /* SceneDelegate.swift */; };
 		2BA11AE62B21FBBB001FC310 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA11AE52B21FBBB001FC310 /* HomeViewController.swift */; };
@@ -56,13 +59,15 @@
 		2BC2E4A32B27497800D3A0D0 /* Extension - String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC2E4A22B27497800D3A0D0 /* Extension - String.swift */; };
 		2BC2E4A52B2769DA00D3A0D0 /* Extension - UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC2E4A42B2769DA00D3A0D0 /* Extension - UITableView.swift */; };
 		2BC2E4A82B27737500D3A0D0 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2BC2E4A72B27737500D3A0D0 /* IQKeyboardManagerSwift */; };
-		2BD95E032B23546D003028B8 /* MessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD95E022B23546D003028B8 /* MessageCellView.swift */; };
-		2BD95E052B235487003028B8 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD95E042B235487003028B8 /* MessageCell.swift */; };
+		2BD95E032B23546D003028B8 /* MessageCellOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD95E022B23546D003028B8 /* MessageCellOutView.swift */; };
 		2BD95E0A2B235556003028B8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD95E092B235556003028B8 /* Message.swift */; };
 		2BD95E0D2B2358DE003028B8 /* Extension - UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD95E0C2B2358DE003028B8 /* Extension - UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B4A1BD22B29CDC0009F71E5 /* MessageCellInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellInView.swift; sourceTree = "<group>"; };
+		2B4A1BD42B29CDD8009F71E5 /* MessageInCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInCell.swift; sourceTree = "<group>"; };
+		2B4A1BD62B29DD18009F71E5 /* MessageCellOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellOut.swift; sourceTree = "<group>"; };
 		2BA11ADE2B21FBBB001FC310 /* flash-chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "flash-chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA11AE12B21FBBB001FC310 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BA11AE32B21FBBB001FC310 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,8 +91,7 @@
 		2BBB7DAF2B224C9000DC774C /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		2BC2E4A22B27497800D3A0D0 /* Extension - String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension - String.swift"; sourceTree = "<group>"; };
 		2BC2E4A42B2769DA00D3A0D0 /* Extension - UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension - UITableView.swift"; sourceTree = "<group>"; };
-		2BD95E022B23546D003028B8 /* MessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellView.swift; sourceTree = "<group>"; };
-		2BD95E042B235487003028B8 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		2BD95E022B23546D003028B8 /* MessageCellOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellOutView.swift; sourceTree = "<group>"; };
 		2BD95E092B235556003028B8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		2BD95E0C2B2358DE003028B8 /* Extension - UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension - UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +135,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B4A1BCF2B29CD99009F71E5 /* MessageIn */ = {
+			isa = PBXGroup;
+			children = (
+				2B4A1BD12B29CDA8009F71E5 /* View */,
+				2B4A1BD02B29CD9E009F71E5 /* Cell */,
+			);
+			path = MessageIn;
+			sourceTree = "<group>";
+		};
+		2B4A1BD02B29CD9E009F71E5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2B4A1BD42B29CDD8009F71E5 /* MessageInCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2B4A1BD12B29CDA8009F71E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B4A1BD22B29CDC0009F71E5 /* MessageCellInView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2BA11AD52B21FBBB001FC310 = {
 			isa = PBXGroup;
 			children = (
@@ -332,24 +361,25 @@
 		2BD95E002B23544B003028B8 /* TableView Cells */ = {
 			isa = PBXGroup;
 			children = (
-				2BD95E012B235458003028B8 /* Message */,
+				2B4A1BCF2B29CD99009F71E5 /* MessageIn */,
+				2BD95E012B235458003028B8 /* MessageOut */,
 			);
 			path = "TableView Cells";
 			sourceTree = "<group>";
 		};
-		2BD95E012B235458003028B8 /* Message */ = {
+		2BD95E012B235458003028B8 /* MessageOut */ = {
 			isa = PBXGroup;
 			children = (
 				2BD95E072B23553B003028B8 /* Cell */,
 				2BD95E062B235537003028B8 /* View */,
 			);
-			path = Message;
+			path = MessageOut;
 			sourceTree = "<group>";
 		};
 		2BD95E062B235537003028B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2BD95E022B23546D003028B8 /* MessageCellView.swift */,
+				2BD95E022B23546D003028B8 /* MessageCellOutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -357,7 +387,7 @@
 		2BD95E072B23553B003028B8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				2BD95E042B235487003028B8 /* MessageCell.swift */,
+				2B4A1BD62B29DD18009F71E5 /* MessageCellOut.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -488,7 +518,9 @@
 			files = (
 				2BA11AE62B21FBBB001FC310 /* HomeViewController.swift in Sources */,
 				2BA11B1D2B21FCAD001FC310 /* HomeViewModel.swift in Sources */,
+				2B4A1BD52B29CDD8009F71E5 /* MessageInCell.swift in Sources */,
 				2BD95E0D2B2358DE003028B8 /* Extension - UIView.swift in Sources */,
+				2B4A1BD72B29DD18009F71E5 /* MessageCellOut.swift in Sources */,
 				2BA11B112B21FC84001FC310 /* RegisterViewController.swift in Sources */,
 				2BA11B172B21FC96001FC310 /* ChatViewController.swift in Sources */,
 				2BA11B192B21FC9F001FC310 /* LoginView.swift in Sources */,
@@ -502,12 +534,12 @@
 				2BA11B1B2B21FCA3001FC310 /* LoginViewController.swift in Sources */,
 				2BA11B0F2B21FC78001FC310 /* RegisterViewModel.swift in Sources */,
 				2BBB7DB02B224C9000DC774C /* K.swift in Sources */,
-				2BD95E032B23546D003028B8 /* MessageCellView.swift in Sources */,
+				2BD95E032B23546D003028B8 /* MessageCellOutView.swift in Sources */,
 				2BC2E4A52B2769DA00D3A0D0 /* Extension - UITableView.swift in Sources */,
+				2B4A1BD32B29CDC0009F71E5 /* MessageCellInView.swift in Sources */,
 				2BBB7DAD2B2240E100DC774C /* ChatViewModel.swift in Sources */,
 				2BBB7DA92B22342F00DC774C /* AlertFailedLoginorRegister.swift in Sources */,
 				2BC2E4A32B27497800D3A0D0 /* Extension - String.swift in Sources */,
-				2BD95E052B235487003028B8 /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
